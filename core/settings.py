@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import dj_database_url
 import os
-DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
+# DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,11 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = 'yog%614e7xzdu9%a=kjm9^w%o)j$h8otde!)odlef28wpax(+6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOST").split("")
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -83,8 +83,7 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-database_url = os.environ.get("DATABASE_URL")
-DATABASES['default'] = dj_database_url.parse(database_url)
+DATABASES['default'] = dj_database_url.parse("postgres://testff_user:dMTvdb9ds1JbA6IKDmmsAyGs6toFwP77@dpg-cktvog8egfnc738d0po0-a.oregon-postgres.render.com/testff")
 
 
 # Password validation
